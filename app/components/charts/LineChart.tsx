@@ -9,8 +9,9 @@ import {
   Legend,
 } from "chart.js";
 import type { ChartData, ChartOptions, Plugin } from "chart.js";
-
 import { Line } from "react-chartjs-2";
+import { useMemo } from "react";
+import type { ILineChartData } from "~/services/typings";
 
 ChartJS.register(
   CategoryScale,
@@ -53,43 +54,6 @@ const options: ChartOptions<"line"> = {
   },
 };
 
-const labels = [
-  "6月",
-  "7月",
-  "8月",
-  "9月",
-  "10月",
-  "11月",
-  "12月",
-  "1月",
-  "2月",
-  "3月",
-  "4月",
-  "5月",
-];
-
-function getRndInteger(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-
-const data: ChartData<"line"> = {
-  labels,
-  datasets: [
-    {
-      label: "Dataset 1",
-      data: labels.map(() => getRndInteger(-500, 500)),
-      borderColor: "#FFCC21",
-      backgroundColor: "#FFCC21",
-    },
-    {
-      label: "Dataset 2",
-      data: labels.map(() => getRndInteger(-500, 500)),
-      borderColor: "#8FE9D0",
-      backgroundColor: "#8FE9D0",
-    },
-  ],
-};
-
 const plugin: Plugin = {
   id: "line-chart",
   beforeDraw: (chart) => {
@@ -102,7 +66,27 @@ const plugin: Plugin = {
   },
 };
 
-const LineChart = () => {
+interface Props {
+  data?: ILineChartData[];
+}
+
+const colors = ["#FFCC21", "#8FE9D0"];
+
+const LineChart: React.FC<Props> = (props) => {
+  const { data: chartData } = props;
+  const data: ChartData<"line"> = useMemo(
+    () => ({
+      labels: chartData?.[0]?.data?.map((i) => i.label) || [],
+      datasets:
+        chartData?.map((d, index) => ({
+          label: d.label,
+          data: d?.data?.map((i) => i.value) || [],
+          borderColor: colors[index],
+          backgroundColor: colors[index],
+        })) || [],
+    }),
+    [chartData]
+  );
   return (
     <Line
       className="bg-text p-4"

@@ -1,4 +1,4 @@
-import type { IExercise, IMenu } from "./typings";
+import type { IExercise, ILineChartData, IMenu, IProgress } from "./typings";
 import m01 from "~/assets/images/m01.jpg";
 import l03 from "~/assets/images/l03.jpg";
 import d01 from "~/assets/images/d01.jpg";
@@ -62,3 +62,41 @@ export const getMenus = async () => {
   ];
   return menus;
 };
+
+export const getProgress = async (): Promise<IProgress> => {
+  return {
+    title: "05/21",
+    value: 75,
+  };
+};
+
+export const getLineChartData = async (): Promise<ILineChartData[]> => {
+  const labels = [
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月",
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+  ];
+  return [
+    {
+      label: "Dataset 1",
+      data: labels.map((label) => ({ label, value: getRndInteger(-500, 500) })),
+    },
+    {
+      label: "Dataset 2",
+      data: labels.map((label) => ({ label, value: getRndInteger(-500, 500) })),
+    },
+  ];
+};
+
+function getRndInteger(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}

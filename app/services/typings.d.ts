@@ -12,9 +12,23 @@ export interface IRecord {
   id: string;
 }
 
-
 export interface IMenu {
   name: string;
   image: string;
   id: string;
+}
+
+export interface IProgress {
+  value: number;
+  title: string;
+}
+
+export interface ILineChartDataItem {
+  label: string;
+  value: number;
+}
+
+export interface ILineChartData {
+  label: string;
+  data: ILineChartDataItem[];
 }

@@ -17,7 +17,7 @@ export const getExercises = async () => {
   return exercises;
 };
 
-export const getMenus = () => {
+export const getMenus = async () => {
   const menus: IMenu[] = [
     {
       id: "1",

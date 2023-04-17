@@ -1,5 +1,5 @@
-import { useLoaderData, V2_MetaFunction } from "@remix-run/react";
-
+import { useLoaderData} from "@remix-run/react";
+import type { V2_MetaFunction } from "@remix-run/react";
 import Container from "~/components/Container";
 import ChartSection from "~/components/sections/ChartSection";
 import CategorySection from "~/components/sections/CategorySection";

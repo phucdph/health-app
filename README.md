@@ -1,62 +1,68 @@
-# Welcome to Remix!
 
-- [Remix Docs](https://remix.run/docs)
-- [Netlify Functions](https://www.netlify.com/products/functions/)
 
-## Netlify Setup
+# Health App
 
-1. Install the [Netlify CLI](https://www.netlify.com/products/dev/):
+[Live Demo](https://rococo-concha-a0156d.netlify.app/)
+ 
+## Getting Started
 
-```sh
-npm i -g netlify-cli
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+
+### Prerequisites
+
+* NodeJS >= 14
+* npm
+
+
+### Development
+
+  
+
+A step by step series of examples that tell you how to get a development env running
+
+  
+
+Clone this respository
+
+  
+
+```
+git clone git@github.com:phucdph/health-app.git
 ```
 
-If you have previously installed the Netlify CLI, you should update it to the latest version:
+  
 
-```sh
-npm i -g netlify-cli@latest
+And instal the dependencies
+
+  
+
+```
+npm install
 ```
 
-2. Sign up and log in to Netlify:
 
-```sh
-netlify login
+And finally just start the application
+
 ```
-
-3. Create a new site:
-
-```sh
-netlify init
-```
-
-## Development
-
-The Remix dev server starts your app in development mode, rebuilding assets on file changes. To start the Remix dev server:
-
-```sh
 npm run dev
 ```
 
-Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
 
-The Netlify CLI builds a production version of your Remix App Server and splits it into Netlify Functions that run locally. This includes any custom Netlify functions you've developed. The Netlify CLI runs all of this in its development mode.
+## Built With
 
-```sh
-netlify dev
-```
+  
 
-Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
+* [react.js](https://reactjs.org/) - A JavaScript library for building user interfaces.
 
-Note: When running the Netlify CLI, file changes will rebuild assets, but you will not see the changes to the page you are on unless you do a browser refresh of the page. Due to how the Netlify CLI builds the Remix App Server, it does not support hot module reloading.
+* [remix](https://remix.run/) - Remix is a full stack web framework that lets you focus on the user interface and work back through web fundamentals to deliver a fast, slick, and resilient user experience.
 
-## Deployment
+* [chart.js](https://www.chartjs.org/) - Simple yet flexible JavaScript charting library for the modern web.
 
-There are two ways to deploy your app to Netlify, you can either link your app to your git repo and have it auto deploy changes to Netlify, or you can deploy your app manually. If you've followed the setup instructions already, all you need to do is run this:
+* [tailwindcss](https://tailwindcss.com/) - Rapidly build modern websites without ever leaving your HTML.
 
-```sh
-# preview deployment
-netlify deploy --build
 
-# production deployment
-netlify deploy --build --prod
-```
+## Authors
+
+  
+
+* **Đặng Phan Hoàng Phúc** (phuchoang2710@gmail.com)

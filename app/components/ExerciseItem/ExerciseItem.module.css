@@ -1,0 +1,12 @@
+.exercise-item {
+  position: relative;
+  padding-left: 16px;
+}
+
+.exercise-item ::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  font-size: 12px;
+}

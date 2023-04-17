@@ -1,0 +1,7 @@
+.category-item {
+  max-width: 120px;
+  max-height: 140px;
+  background: linear-gradient(155.89deg, #ffcc21 8.26%, #ff963c 91.18%);
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  justify-self: center;
+}
